@@ -1,0 +1,26 @@
+.stats{
+    background-color:#EEF2FB;
+    height:100%;
+}
+#primary{
+     box-shadow: 5px 4px 5px rgba(112, 118, 152, 0.3);
+    
+}
+#success{
+    box-shadow: 5px 4px 5px rgba(115, 152, 112, 0.4);
+   
+}
+#danger{
+    box-shadow: 5px 4px 5px rgba(182, 0, 0, 0.15);
+   
+}
+#dark{
+    box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.15);
+   
+}
+#numbers{
+    font-size: x-large;
+}
+#present,#region,#news{
+  font-family: 'Mulish', sans-serif;
+}
