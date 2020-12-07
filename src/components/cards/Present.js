@@ -6,7 +6,7 @@ const Present=({d,c,r,last}) =>{
     const reco=last.map(l=>l.Recovered)
 
     return (
-        <div className="container mt-5">
+        <div className="container mt-5" style={{fontFamily:'Mulish'}}>
             <div className="row">
                 <div className="col-5">
                     <table className="table table-bordered table-warning text-left">

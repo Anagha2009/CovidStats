@@ -1,3 +1,6 @@
 #primary:hover,#success:hover,#danger:hover,#dark:hover,#newsCard:hover{
     transform: scale(1.05);
 }
+#newsCard:hover{
+    cursor: pointer;
+}

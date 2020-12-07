@@ -1,7 +1,7 @@
 import React from 'react'
 import  {Link}  from 'react-router-dom';
 import emojiFlags from "emoji-flags"
-import './search.css'
+import './search.css';
 
 
 
@@ -23,7 +23,7 @@ const Search=({countries,dash}) =>{
         <div style={dash ?{display:'flex'}:null}>
             
           <select onChange={handleClick}className={dash ? "form-control form-control-md": "form-control form-control-lg"}>
-                <option className="opt-style" >
+                <option style={{borderTop:'1px solid black'}}>
                    Select a country
                 </option>
 
@@ -32,7 +32,7 @@ const Search=({countries,dash}) =>{
                 // console.log(code)
                 return(
                            
-                           <option  value ={country.Country} name={country.Country}>
+                           <option value ={country.Country} name={country.Country}>
                                {country.Country} ({country.ISO2}) 
                             </option>
 
@@ -44,8 +44,8 @@ const Search=({countries,dash}) =>{
             </select>
             {!dash ? (
             <Link to = '/dashboard'>
-            <button type="button" className="btn btn-warning style-btn" >
-            <strong>Get stats</strong>
+            <button type="button" className="btn-lg mt-4 btn-warning style-btn" >
+            <strong>Get Stats</strong>
            </button>
            </Link> )
            :(

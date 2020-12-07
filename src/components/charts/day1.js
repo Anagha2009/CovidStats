@@ -79,9 +79,9 @@ const Day1=({result})=> {
         },
       ];
     return (
-        <div>
+        <div style={{border:'1px solid white',backgroundColor:'white',padding:15}} className="mt-5">
             <AreaChart  width={1000} height={250} data={data}
-                margin={{ top: 35, right: 30, left: 0, bottom: 0 }}>
+                margin={{ top: 40, right: 0, left: 50, bottom: 0 }}>
                 <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="rgba(112, 118, 152, 0.7)" stopOpacity={0.8}/>
@@ -114,13 +114,13 @@ const Day1=({result})=> {
         <Line type="monotone" dataKey="Active" stroke="#8884d8" activeDot={{ r: 8 }} />
       </LineChart> */}
       <div className="row">
-          <div className="col-6">
+          <div className="col-6 mt-5">
           <LineChart
         width={450}
         height={300}
         data={Rdata}
         margin={{
-          top: 55, right: 30, left: 20, bottom: 5,
+          top: 35, right: 0, left: 50, bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
@@ -131,13 +131,13 @@ const Day1=({result})=> {
         <Line type="monotone" dataKey="Recovered" stroke="rgba(115, 152, 112, 1)" activeDot={{ r: 8 }} />
       </LineChart>
           </div>
-          <div className="col-6">
+          <div className="col-6 mt-5">
           <LineChart
         width={450}
         height={300}
         data={Ddata}
         margin={{
-          top: 55, right: 30, left: 20, bottom: 5,
+          top: 35, right: 0, left: 50, bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />

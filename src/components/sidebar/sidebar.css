@@ -6,16 +6,7 @@
     rgba(4, 87, 105, 1),
     rgba(0, 0, 0, 1));
 }
-#sidenav-links p a{
-    color:#001E1D !important;
-text-decoration: none;
 
-}
-#sidenav-links p a:hover{
-    border:1px solid #001e1d;
-    background-color: #001E1D;
-    color:#FF8E3C !important;
-}
 #nav-h3{
     font-family: 'Mulish',sans-serif;
     padding: 10px;
@@ -25,6 +16,7 @@ color: #007bff !important;
 text-decoration: none;
 }
 #sidenav-links{
+    font-family: 'Roboto',sans-serif;
     margin-top: 20px;
 }
  #sidenav-links p{
@@ -38,6 +30,16 @@ text-decoration: none;
     border:1px solid #001e1d;
     background-color: #001E1D;
     color:#FF8E3C;
+}
+#sidenav-links p a{
+    color:#001E1D !important;
+text-decoration: none;
+
+}
+#sidenav-links p a:hover{
+    border:1px solid #001e1d;
+    background-color: #001E1D;
+    color:#FF8E3C !important;
 }
 .act{
     border:1px solid #001e1d;

@@ -14,7 +14,7 @@ const Cards=({result})=> {
     return (
         <div>
         <div className="container">
-            <div className="card-deck w-100 mt-4  ">
+            <div className="card-deck w-100 mt-5 ">
                 <div className='card border border-primary'id="primary">
                     <div className="card-body text-primary">
                         <h5 className="card-title text-left text-uppercase text-monospace">Active cases</h5>
@@ -72,8 +72,8 @@ const Cards=({result})=> {
                  </div>
             </div>
         </div>
-             <div id="present" className="container">
-                <h5 className=" text-left text-uppercase mt-5 font-weight-bolder" style={{color:'#045769',fontSize:'larger'}}>Present day Stats</h5>
+             <div id="present" className="container" style={{marginTop:70}}>
+                <h5 className=" text-left text-uppercase font-weight-bolder" style={{color:'#045769',fontSize:'larger'}}>Present day Stats</h5>
             </div>
             <Present c={confirm} r={Rec} d={death} last={last}/>           
         </div>

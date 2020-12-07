@@ -4,29 +4,8 @@ import {getCode} from 'country-list';
 import ReadMoreReact from 'read-more-react';
 import './cards.css'
 
- const NewsCards=()=> {
-     const [articles,setArticles] = useState([])
-     const slugName = localStorage.getItem('slug')
-     console.log(slugName)
-     const code= getCode(slugName)
-     console.log(code)
-     useEffect(() => {
-        const options = {
-            method: 'GET',
-            url: `https://coronavirus-smartable.p.rapidapi.com/news/v1/${code}/`,
-            headers: {
-              'x-rapidapi-key': '06c8ca8549msh7d544746656b576p1712c2jsn369cb4e27e92',
-              'x-rapidapi-host': 'coronavirus-smartable.p.rapidapi.com'
-            }
-          };
-          
-          axios.request(options).then(function (response) {
-              setArticles(response.data.news);
-              console.log(response.data.news)
-          }).catch(function (error) {
-              console.error(error);
-          });
-    }, [])
+ const NewsCards=({articles})=> {
+  
    
     return (
         <div className="card-deck text-left mt-5" >

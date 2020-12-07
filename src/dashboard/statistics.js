@@ -13,6 +13,28 @@ import {getCode} from 'country-list';
 
 const Statistics=({result})=> {
     const [countries, setCountries]=useState([])
+    const [articles,setArticles] = useState([])
+    const slugName = localStorage.getItem('slug')
+    console.log(slugName)
+    const code= getCode(slugName)
+    console.log(code)
+    useEffect(() => {
+       const options = {
+           method: 'GET',
+           url: `https://coronavirus-smartable.p.rapidapi.com/news/v1/${code}/`,
+           headers: {
+             'x-rapidapi-key': '06c8ca8549msh7d544746656b576p1712c2jsn369cb4e27e92',
+             'x-rapidapi-host': 'coronavirus-smartable.p.rapidapi.com'
+           }
+         };
+         
+         axios.request(options).then(function (response) {
+             setArticles(response.data.news);
+             console.log(response.data.news)
+         }).catch(function (error) {
+             console.error(error);
+         });
+   }, [])
 
     useEffect(() => {
         axios.get(`https://api.covid19api.com/countries`)
@@ -23,10 +45,10 @@ const Statistics=({result})=> {
             console.log(err)
         })
     }, [])
+    
     console.log(result)
     var view=localStorage.getItem('slug')
-    const code= getCode(view)
-    const flag= emojiFlags.countryCode(code);
+    const code1= getCode(view)
 
     return (
         <div className="stats">
@@ -34,15 +56,15 @@ const Statistics=({result})=> {
             <div>
             <div className="row">
                 <div className="col-lg-8">
-                    <h6 className="text-left mt-2 ml-4">You're viewing:
+                    <h6 className="text-left mt-4 ml-4">You're viewing:
                     <span className="font-weight-bolder text-uppercase h4 text-monospace ml-2">
                         {view}&nbsp;
-                        {flag.emoji}
+                        { code1 ? emojiFlags.countryCode(code1) : ''}
 
                     </span>
                     </h6>
                 </div>
-                <div className="col-lg-4 mt-1">
+                <div className="col-lg-4 mt-3">
                 <nav>
                 <Search dash countries={countries}/>
                 </nav>
@@ -62,10 +84,13 @@ const Statistics=({result})=> {
                 <h5 className=" text-left text-uppercase mt-3 font-weight-bolder" style={{color:'#045769',fontSize:'larger'}}>Since Day 1</h5>
                 <Day1 result={result}/>
               </div>
+              {articles.length!=0 ? (
               <div id="news" className="container">
                 <h5 className=" text-left text-uppercase mt-5 font-weight-bolder" style={{color:'#045769',fontSize:'larger'}}>Stay Aware</h5>
-                <NewsCards/>
+                <NewsCards articles={articles}/>
               </div>
+              ):''}
+
 
             <p className="text-black text-monospace mt-5">Stay home.Stay safe</p>
              </div>

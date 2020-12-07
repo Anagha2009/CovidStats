@@ -1,3 +1,4 @@
-.opt-style {
-    border-bottom: 1px solid #000000;
+select option{
+    border-bottom: 1px solid #000000 !important;
+    padding-bottom: 10px;
   }

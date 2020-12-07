@@ -2,7 +2,8 @@ import React,{useEffect, useState} from 'react'
 import axios from 'axios'
 import './home.css'
 import map from './home.jpg'
-import Search from '../components/search/search'
+import Search from '../components/search/search';
+
  const Home=()=> {
     const [loading, setloading]=useState(true)
     const [countries, setCountries]=useState([])
