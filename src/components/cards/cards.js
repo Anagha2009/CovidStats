@@ -4,7 +4,7 @@ import './cards.css';
 
 const Cards=({result})=> {
     var last = result.slice(-1)
-    console.log(last)
+    // console.log(last)
     var increase=result.slice(-2,-1)
     var active =increase.map(incr => incr.Active)
     var Rec =increase.map(incr => incr.Recovered)

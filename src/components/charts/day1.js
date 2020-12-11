@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   AreaChart,Area,LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
 const Day1=({result})=> {
-    console.log(result.map(res=>res.Active))
+    // console.log(result.map(res=>res.Active))
      const day=result.map(res=>res.Active)
      const Rday=result.map(res=>res.Recovered)
      const Dday=result.map(res=>res.Deaths)

@@ -10,9 +10,9 @@ const Dashboard=() =>{
     useEffect(() => {
         const slugName = localStorage.getItem('slug');
         axios.get(`https://api.covid19api.com/total/country/${slugName}`)
-         .then(res =>{
+         .then(data =>{
             setloading(false);
-             setResult(res.data);
+             setResult(data.data);
          })
          .catch(err=>{
             console.log(err)
@@ -26,7 +26,7 @@ const Dashboard=() =>{
                 <Sidebar/>
                 </div>
                 <div className="col-lg-10" style={{padding:0,margin:0}}>
-                 <Statistics result ={result}/>
+                 <Statistics result={result}/>
                 </div>
             </div>
              ):

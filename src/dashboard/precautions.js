@@ -6,7 +6,9 @@ import mask from '../images/undraw_medical_care_movn.svg'
 import social from '../images/undraw_social_distancing_2g0u.svg'
 import NewsCards from '../components/cards/newsCards'
 
+
 const Precautions=() =>{
+    
     return (
     <div className="row">
         <div className="col-lg-2" style={{padding:0,margin:0}}>

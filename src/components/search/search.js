@@ -1,6 +1,6 @@
 import React from 'react'
 import  {Link}  from 'react-router-dom';
-import emojiFlags from "emoji-flags"
+// import emojiFlags from "emoji-flags"
 import './search.css';
 
 
@@ -10,8 +10,8 @@ const Search=({countries,dash}) =>{
     const List = countries.sort( (a, b) => a.Country.toString().localeCompare(b.Country))
     const handleClick= (e)=>{
      const slug = e.target.value
-     const iso = e.target.name
-     console.log(slug)
+    //  const iso = e.target.name
+    //  console.log(slug)
      localStorage.setItem('slug', slug);
     }
     
@@ -28,11 +28,11 @@ const Search=({countries,dash}) =>{
                 </option>
 
                {List.map(country =>{
-                const code= emojiFlags.countryCode(country.ISO2);
+                // const code= emojiFlags.countryCode(country.ISO2);
                 // console.log(code)
                 return(
                            
-                           <option value ={country.Country} name={country.Country}>
+                           <option key={country.Country} value ={country.Country} name={country.Country}>
                                {country.Country} ({country.ISO2}) 
                             </option>
 
